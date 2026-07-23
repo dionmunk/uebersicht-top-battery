@@ -1,0 +1,6 @@
+{
+    "name": "Top Battery Usage",
+    "description": "Lists the five processes with the highest energy impact, each with its name, PID, and power score.",
+    "author": "Dion Munk",
+    "email": "dion@dionmunk.com"
+}
