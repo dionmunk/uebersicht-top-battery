@@ -6,7 +6,7 @@ A top battery usage widget for [Übersicht](http://tracesof.net/uebersicht/). It
 
 ## Screenshot
 
-![Screenshot](screenshots/screenshot.png)
+![Screenshot](screenshot.png)
 
 ## Installation
 
