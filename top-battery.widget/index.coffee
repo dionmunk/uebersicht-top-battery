@@ -1,5 +1,8 @@
 command: "top -l 2 -o power -n 5 -stats power,command,pid | awk '/^COMMAND|^PROCESSES|^Load|^CPU|^SharedLibs|^MemRegions|^PhysMem|^VM|^Networks|^Disks|^$/ {next} { pid=$NF; pwr=$1; cmd=\"\"; for(i=2;i<=NF-1;i++) cmd=cmd (i>2?\" \":\"\") $i; print pwr\",\"cmd\",\"pid }' | tail -n 5"
 
+# Enable or disable this widget.
+widgetEnabled: true   # true | false
+
 refreshFrequency: '5s'
 
 style: """
@@ -89,6 +92,11 @@ render: -> """
 """
 
 update: (output, domEl) ->
+  # Hide entirely when disabled.
+  if not @widgetEnabled
+    $(domEl).css('display', 'none')
+    return
+  $(domEl).css('display', '')
   processes = output.split('\n')
   table     = $(domEl).find('table')
 
